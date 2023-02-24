@@ -1,0 +1,10 @@
+2023.02.25 프로젝트 시작
+작업환경 : AWS EC2 ubuntu 및 로컬 window
+템플릿 : intelliJ, MobaXterm, vscode
+작업툴 : mysql, jpa, java & spring, react, javascript, docker, aws etc ...
+
+1일차
+- react 프로젝트 생성
+- proxy 설정 8080(spring) - 3000(react)
+- gradle 빌드 방식으로 spring boot를 통하여 spring project 생성
+- spring controller 제작 및 8080 호스팅 띄우는 작업 완료, 3000번과 연결된 것도 확인
