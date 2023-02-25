@@ -10,6 +10,6 @@ import java.util.List;
 public class HomeController {
     @GetMapping("hello")
     public List<String> Hello(){
-        return Arrays.asList("3000");
+        return Arrays.asList("fixed");
     }
 }
