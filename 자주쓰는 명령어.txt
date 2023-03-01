@@ -1,0 +1,49 @@
+자바 빌드 & 배포
+bash /home/ubuntu/seungchan/deploy.sh
+
+서버에서 실행중인 포트번호 확인
+netstat -tnl
+
+8080 포트 실행 종료
+sudo fuser -k 8080/tcp
+
+사용중인 메모리 조회
+free -h 
+
+가상 메모리 추가 + 스왑 설정(서버 재시작할때마다 초기화됨)
+sudo dd if=/dev/zero of=/mnt/swapfile bs=1M count=2048
+sudo mkswap /mnt/swapfile
+sudo swapon /mnt/swapfile
+
+스왑 메모리 해제
+sudo swapoff -v /mnt/swapfile
+sudo rm /mnt/swapfile
+
+그레이들 빌드
+./gradlew build
+
+도커 컨테이너 접근
+sudo docker exec -it c_name /bin/bash
+
+도커 컨테이너 모두 종료
+docker rm -f $(docker ps -qa)
+
+도키 이미지 모두 삭제
+docker rmi $(docker images -q)
+
+도커 컴포즈 파일 임시 저장
+version: "3"
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/usr/src/app
+    working_dir: /usr/src/app
+    command: java -jar ./build/libs/backend-0.0.1-SNAPSHOT.jar
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true

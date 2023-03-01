@@ -7,7 +7,7 @@ cd $REPOSITORY
 
 echo "> 깃허브 pull"
 
-git pull
+git pull origin master
 
 cd $REPOSITORY/$PROJECT_NAME/
 
@@ -35,6 +35,7 @@ if [ -z "$CURRENT_PID" ]; then
 else
         echo "> kill -15 $CURRENT_PID"
         kill -15 $CURRENT_PID
+        sudo fuser -k 8080/tcp
         sleep 5
 fi
 

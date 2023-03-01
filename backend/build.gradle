@@ -12,6 +12,10 @@ configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
 }
 
 repositories {
@@ -26,9 +30,10 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
-def reactAppDir = "/home/ubuntu/seungchan/frontend"
+def reactAppDir = "../frontend"
 
 sourceSets {
 	main {
