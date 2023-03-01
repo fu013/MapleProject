@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [message, setMessage] = useState([]);
   useEffect(() => {
-    fetch("/hello")
+    fetch("http://localhost:8080/hello")
       .then((res) => {
         return res.json();
       })
@@ -26,8 +26,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React Ver upgrade fffffffffffffffffffffffffffffffff333
+          Learn React Ver
         </a>
+        {message}
         <ul>
           {message.map((v, idx) => (
             <li key={`${idx}-${v}`}>{v}</li>
