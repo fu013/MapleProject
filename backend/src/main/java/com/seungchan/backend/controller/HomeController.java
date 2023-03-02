@@ -12,4 +12,8 @@ public class HomeController {
     public List<String> Hello(){
         return Arrays.asList("Connected Spring & React");
     }
+    @GetMapping("guild")
+    public List<String> Guild(){
+        return Arrays.asList("Connected Spring & React");
+    }
 }
