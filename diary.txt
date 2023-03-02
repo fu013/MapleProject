@@ -21,3 +21,18 @@
 - 스프링 코드 수정시 실시간 서버 반영 시도 
 => intelliJ에서는 된다고 하는데 우분투에서 프로그램안쓰고는 안되는듯함, 추가적으로 시도해볼 예정
 
+4일차
+- intellJ 프로그램 설정을 통하여 스프링 코드 수정시 실시간 서버 반영 성공
+
+5일차
+- tomcat 8080 서버에서 react url mapping이 되지 않는 현상 발생
+=> spring에 router 설정을 통하여 "v/" url segment가 앞에 붙으면 react로 라우팅 되게끔 설정하여 해결
+- mysql/jpa spring 환경 설정을 통하여 연동 및 데이터베이스에 table 개설 로직 추가
+- react에 header, login modal 등 웹 퍼블리싱 작업 추가
+- react에 axios 통신 모듈을 이용하여 8080서버와 로그인 Req & res 성공
+
+6일차
+- 해야할일 : 스프링에서 리액트 라우팅한 지점에 백엔드 & 프론트가 동시에 라우팅이 가능한지 점검
+- querystring이 spring에서 받아 지는지 점검
+
+
