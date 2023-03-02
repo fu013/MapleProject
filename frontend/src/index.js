@@ -15,7 +15,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/guild" element={<Guild />} />
+        <Route path="/v/guild" element={<Guild />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

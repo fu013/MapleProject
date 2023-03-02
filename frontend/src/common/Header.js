@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "resources/css/header.css";
 
 function Header() {
@@ -14,7 +15,7 @@ function Header() {
           <Link to="/" className="logo">
             메이플을 윤택하게
           </Link>
-          <Link to="/guild">길드관리</Link>
+          <Link to="/v/guild">길드관리</Link>
         </div>
         <div className="side-header">
           <div className="login-modal-btn" onClick={openModal}>
@@ -35,6 +36,30 @@ function Modal({ isOpen, closeModal }) {
     e.currentTarget.classList.remove("on");
     e.currentTarget.previousSibling.classList.remove("on");
   };
+  const [id, setId] = useState([]);
+  const [pw, setPw] = useState([]);
+  const onIdHandler = (event) => {
+    setId(event.currentTarget.value);
+  };
+  const onPwHandler = (event) => {
+    setPw(event.currentTarget.value);
+  };
+  let data = {
+    id: id,
+    pw: pw,
+  };
+  const onLoginHandler = () => {
+    axios
+      .post("http://localhost:8080/login", JSON.stringify(data), {
+        headers: {
+          "Content-Type": `application/json`,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
+
   return (
     <div className={isOpen ? "modal-container on" : "modal-container"}>
       <div className="modal-overlay" onClick={closeModal}></div>
@@ -62,6 +87,7 @@ function Modal({ isOpen, closeModal }) {
             <input
               type="text"
               id="user_id"
+              onChange={onIdHandler}
               onFocus={inputFocus}
               onBlur={inputBlur}
             ></input>
@@ -71,12 +97,17 @@ function Modal({ isOpen, closeModal }) {
             <input
               type="password"
               id="user_pw"
+              onChange={onPwHandler}
               onFocus={inputFocus}
               onBlur={inputBlur}
             ></input>
           </div>
           <div>
-            <button type="button" className="login-btn">
+            <button
+              type="button"
+              className="login-btn"
+              onClick={onLoginHandler}
+            >
               로그인
             </button>
           </div>
