@@ -1,0 +1,149 @@
+header {
+    font-size: 1.5rem;
+    height: 5rem;
+    box-shadow: 3px 4px 2px rgb(0 0 0 / 9%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-header {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.side-header {
+    min-width: 10rem;
+    width: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    padding: 0 2rem;
+    min-width: 20rem;
+    width: 5%;
+    color: #000;
+    font-weight: 600;
+}
+.fixed-header {
+    max-width: 1320px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.modal-container .login-modal {
+    position: fixed;
+    height: 45rem;
+    width: 38rem;
+    background: #fff;
+    border-radius: 0.8rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6rem;
+}
+
+.modal-container .modal-overlay {
+    position: fixed;
+    background: rgba(100, 100, 100, 0.3);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.modal-container .modal-overlay, .modal-container .login-modal { 
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+}
+.modal-container.on .modal-overlay, .modal-container.on .login-modal {
+    z-index: 10000 !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    transition: opacity 0.5s ease;
+}
+.login-modal-btn {
+    cursor: pointer;
+}
+.modal-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    background-size: 100% 100%;
+    cursor: pointer;
+    z-index: 1;
+    filter: opacity(0.5) drop-shadow(0 0 0 black);
+}
+.login-btn {
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.35rem;
+    width: 100%;
+    font-weight: 500;
+    line-height: 3.5rem;
+    border-radius: 2rem;
+    border: 1px solid #ff9b85;
+    background-color: #ff9b85;
+    color: #ffffff;
+    margin-top: 2rem;
+}
+.login-des {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1d96ff;
+}
+.login-modal input {
+    border: 0;
+    color: #25282f;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(37,40,47,0.1);
+    -webkit-appearance: none;
+    border-radius: 0;
+    padding: 0;
+    outline: 0;
+    font-size: 14px;
+    width: 100%;
+    transition: all 200ms;
+    cursor: text;
+    padding-bottom: 5px;
+}
+.login-modal input.on {
+    border-bottom: 1px solid #ff9b85;
+}
+.login-modal label.on {
+    color: #ff9b85;
+    bottom: 30px;
+}
+.login-modal label {
+    width: 100%;
+    height: 100%;
+    transition: all 200ms;
+    cursor: text;
+    position: absolute;
+    font-size: 14px !important;
+    color: rgba(37,40,47,0.3);
+    text-align: left;
+    left: 0;
+    bottom: 20px;
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.modal-content > div {
+    min-height: 3rem;
+    width: 100%;
+    position: relative;
+}
