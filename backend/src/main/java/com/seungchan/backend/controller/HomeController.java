@@ -8,9 +8,4 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-public class HomeController {
-    @PostMapping("api/login")
-    public String Login() {
-        return "along";
-    }
-}
+public class HomeController { }

@@ -1,4 +1,4 @@
-package com.seungchan.backend.jpa;
+package com.seungchan.backend.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
@@ -20,7 +19,7 @@ public class MemberEntity {
     @Column(name = "mb_no")
     private long mbNo;
     @Column(name = "mb_id")
-    private long mbId;
+    private String mbId;
     @Column(name = "mbPw")
     private String mbPw;
     @Column(name = "created_at")

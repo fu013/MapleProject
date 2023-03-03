@@ -50,7 +50,7 @@ function Modal({ isOpen, closeModal }) {
   };
   const onLoginHandler = () => {
     axios
-      .post("http://localhost:8080/login", JSON.stringify(data), {
+      .post("http://localhost:8080/api/login", JSON.stringify(data), {
         headers: {
           "Content-Type": `application/json`,
         },
