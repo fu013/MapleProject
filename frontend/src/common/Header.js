@@ -45,12 +45,23 @@ function Modal({ isOpen, closeModal }) {
     setPw(event.currentTarget.value);
   };
   let data = {
-    id: id,
-    pw: pw,
+    mbId: id,
+    mbPw: pw,
   };
   const onLoginHandler = () => {
     axios
-      .post("http://localhost:8080/api/login", JSON.stringify(data), {
+      .post("http://localhost:8080/api/auth/login", JSON.stringify(data), {
+        headers: {
+          "Content-Type": `application/json`,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
+  const onSignUpHandler = () => {
+    axios
+      .post("http://localhost:8080/api/auth/signup", JSON.stringify(data), {
         headers: {
           "Content-Type": `application/json`,
         },
@@ -110,9 +121,16 @@ function Modal({ isOpen, closeModal }) {
             >
               로그인
             </button>
+            <button
+              type="button"
+              className="signup-btn"
+              onClick={onSignUpHandler}
+            >
+              회원가입
+            </button>
           </div>
           <p className="login-des">
-            가입 정보가 없다면, 입력하신 정보로 자동 가입됩니다.
+            회원가입 버튼을 누르면, 위에 입력된 정보로 가입됩니다.
           </p>
         </div>
       </div>
