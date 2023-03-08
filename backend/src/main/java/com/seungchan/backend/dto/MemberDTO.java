@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 public final class MemberDTO {
     private String mbId;
     private String mbPw;
+
 }
 

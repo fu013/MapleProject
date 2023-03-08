@@ -56,7 +56,22 @@ function Modal({ isOpen, closeModal }) {
         },
       })
       .then((res) => {
-        console.log(res);
+        alert("로그인되었습니다.");
+      })
+      .catch((error) => {
+        switch (error.response.data) {
+          case "id_no_match":
+            alert("존재하지 않는 아이디입니다.");
+            break;
+          case "pw_no_match":
+            alert("비밀번호가 일치하지 않습니다.");
+            break;
+          case "no_value":
+            alert("아이디, 비밀번호를 모두 입력해주세요.");
+            break;
+          default:
+            alert(error.response.data);
+        }
       });
   };
   const onSignUpHandler = () => {
@@ -67,7 +82,19 @@ function Modal({ isOpen, closeModal }) {
         },
       })
       .then((res) => {
-        console.log(res);
+        alert("회원가입되었습니다.");
+      })
+      .catch((error) => {
+        switch (error.response.data) {
+          case "id_exist":
+            alert("이미 존재하는 아이디입니다.");
+            break;
+          case "no_value":
+            alert("아이디, 비밀번호를 모두 입력해주세요.");
+            break;
+          default:
+            alert(error.response.data);
+        }
       });
   };
 
