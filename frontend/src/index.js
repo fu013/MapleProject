@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./common/Header";
-import App from "./App";
-import "./resources/css/index.css";
+import Header from "common/Header";
+import Side from "common/Side";
+import App from "App";
+import "resources/css/index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from "reportWebVitals";
 import Guild from "view/guild/guild";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -13,6 +14,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Header />
+      <Side />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/v/guild" element={<Guild />} />

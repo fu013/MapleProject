@@ -1,0 +1,18 @@
+aside {
+    display: none;
+}
+
+aside.active {
+    box-shadow: 3px 4px 2px rgb(0 0 0 / 9%);
+    min-height: 100vh;
+    min-width: 5rem;
+    width: 10%;
+    display: block;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    font-size: 1.75vmin;
+    margin-top: 5rem;
+}

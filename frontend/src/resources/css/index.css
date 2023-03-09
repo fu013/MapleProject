@@ -1,21 +1,39 @@
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+#root {
+  display: flex;
+}
+
+#container {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
 html {
   font-size: 10px;
   font-family: 'nanumsquare';
 }
+
 body {
   margin: 0;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-ul, li {
+
+ul,
+li {
   list-style: none;
 }
+
 * {
   box-sizing: border-box;
 }
+
 a {
   color: unset;
   text-decoration: none;
