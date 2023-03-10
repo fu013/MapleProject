@@ -76,9 +76,10 @@ function Modal({ isOpen, closeModal }) {
     mbId: id,
     mbPw: pw,
   };
+  const serverURL = window.location.href.replace('3000', '8080');
   const onLoginHandler = () => {
     axios
-      .post("http://localhost:8080/api/auth/login", JSON.stringify(data), {
+      .post(`${serverURL}api/auth/login`, JSON.stringify(data), {
         headers: {
           "Content-Type": `application/json`,
         },
@@ -104,7 +105,7 @@ function Modal({ isOpen, closeModal }) {
   };
   const onSignUpHandler = () => {
     axios
-      .post("http://localhost:8080/api/auth/signup", JSON.stringify(data), {
+      .post(`${serverURL}api/auth/signup`, JSON.stringify(data), {
         headers: {
           "Content-Type": `application/json`,
         },
