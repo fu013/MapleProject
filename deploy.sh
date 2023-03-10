@@ -5,6 +5,11 @@ PROJECT_NAME=backend
 
 cd $REPOSITORY
 
+echo "> 가상 메모리 설정(EC2 메모리 부족 상쇄)"
+sudo dd if=/dev/zero of=/mnt/swapfile bs=1M count=2048
+sudo mkswap /mnt/swapfile
+sudo swapon /mnt/swapfile
+
 echo "> 깃허브 pull"
 
 git pull origin master
