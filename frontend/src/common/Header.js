@@ -38,6 +38,9 @@ function Header() {
           <Link to="/v/guild" id="guild">
             길드
           </Link>
+          <Link to="/v/union" id="union">
+            유니온
+          </Link>
           <Link to="/v/cube" id="cube">
             큐브
           </Link>
@@ -116,7 +119,6 @@ function Modal({ isOpen, closeModal }) {
       .catch((error) => {
         switch (error.response.data) {
           case "id_exist":
-            alert("이미 존재하는 아이디입니다.");
             break;
           case "no_value":
             alert("아이디, 비밀번호를 모두 입력해주세요.");

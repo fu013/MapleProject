@@ -8,18 +8,18 @@ import "resources/css/index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "reportWebVitals";
 import Guild from "view/guild/guild";
+import Union from "view/union/union";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <Header />
       <Side />
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/v/union" element={<Union />} />
         <Route path="/v/guild" element={<Guild />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
 );
 reportWebVitals();
