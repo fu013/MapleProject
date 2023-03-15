@@ -100,7 +100,7 @@ const Cell = memo( props => {
     } else {
         line = "";
     }   
-    console.log(mp);
+    /* console.log(mp); */
     if(critical.includes(props.xAxis+","+props.yAxis) == true) {
         cri = "cri";
     }

@@ -17,8 +17,8 @@ root.render(
       <Side />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/v/union" element={<Union />} />
         <Route path="/v/guild" element={<Guild />} />
+        {/* <Route path="/v/union" element={<Union />} /> 너무 어려워서 보류*/}
       </Routes>
     </BrowserRouter>
 );

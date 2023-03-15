@@ -38,9 +38,9 @@ function Header() {
           <Link to="/v/guild" id="guild">
             길드
           </Link>
-          <Link to="/v/union" id="union">
+          {/* <Link to="/v/union" id="union">
             유니온
-          </Link>
+          </Link> 보류 */}
           <Link to="/v/cube" id="cube">
             큐브
           </Link>

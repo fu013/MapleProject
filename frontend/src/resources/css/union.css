@@ -29,22 +29,30 @@ body {
     border: 1px solid #ccc;
 }
 
+#shape-container {
+    display: flex;
+}
+
+#shape-container>* {
+    margin: 0 4rem;
+}
+
 .t-cell.active {
     border-left: 1px solid #000;
 }
 
-.t-cell.liner {
+/* .t-cell.liner {
     border-top: 1px solid #000;
     border-right: 1px solid #000;
 }
-
-.t-cell.cri {
+ */
+/* .t-cell.cri {
     background: red;
 }
 
 .t-cell.mp {
     background: blue
-}
+} */
 
 .t-cell-0 {
     background-color: #fff;
